@@ -2,7 +2,7 @@
 
 This app is a development project with the 100Devs agency.
 
-It collects data from an Internet of Things device, and allows the user to look at the data. The device is a "weighing lysimeter, a scientific device used to monitor the water content of a potted plant. The product is called a Wely Device and was developed by Phytochem Consulting in Vancouver, Canada.
+It collects data from an Internet of Things device, and allows the user to look at the data. The device is a "weighing lysimeter", a scientific device used to monitor the water content of a potted plant. The product is called a Wely Device and was developed by Phytochem Consulting in Vancouver, Canada.
 
 The app adds a social media component to the typical IoT dashboard. This builds a "citizen science" platform where people can work together to build knowledge about how to take care of plants. 
 
