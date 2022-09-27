@@ -1,0 +1,29 @@
+<%- include('partials/header') -%>
+
+<main class = "container">
+    <img src="imgs/20200225_131913.jpg" class="img-fluid rounded mx-auto d-block" alt="Wely device, monitoring a phaleanopsis orchid">    
+</main>
+<main class="container">
+    <div class="row justify-content-around mt-5">
+        <a href="/login" class="col-3 btn btn-primary"> Login</a>
+        <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
+    </div>
+    <div><p></p></div>
+    <div class="mb-3">
+        <p>The Wely Device is a wireless "weighing lysimeter" developed by Phytochem Consulting in Vancouver, Canada. Weighing lysimeters have long been the "gold standard" for monitoring the water content of potted plants. The Wely Device takes that concept and turns it into an the Internet of Things device, allowing a gardener or greenhouse operator to monitor their plants from afar.
+        </p>
+        <p>
+        Data is collected by the device and sent to Thingspeak.com. This app allows a user with the channelID and readAPI, but no access to the Thingspeak account, to retrieve the data and visualize it. Also, users can add photos and notes about their plants.
+      </p>
+      </div>
+      <div class="mb-3">
+        <p>
+        This app is under development. In future, data will be stored on the server instead of Thingspeak.com and downloadable as a .csv. Users will be able to have multiple devices as well as use the temperature data reported from the device. There will be a social media aspect as well, allowing gardeners to easily share information. For example, how heavy should a 6" potted coffee tree be to remain healthy? 
+      </p>
+      <p>Try logging in with user: "plantDude@plants.com" with the password "plantsplants", or set up your own account. PlantDude's data shows real data from a 6" coffee tree, indicating that plantDude likes to keep it healthy at around 740g to 600g. You can see when it uses water quickly when the artificial lights are on, and more slowly at night time.
+      </p>
+      </div>
+</main>
+    
+
+<%- include('partials/footer') -%>
