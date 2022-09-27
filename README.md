@@ -6,7 +6,7 @@ It collects data from an Internet of Things device, and allows the user to look 
 
 The app adds a social media component to the typical IoT dashboard. This builds a "citizen science" platform where people can work together to build knowledge about how to take care of plants. 
 
-Major components that the app uses are Node.js for the back end, Express.js to make Node programming easier, Chart.js to chart the data. EJS is used to create HTML to serve to the user and a MongoDB database to store user, social media and telemetry data. 
+Major components that the app uses are: Node.js for the back end, Express.js to make Node programming easier, Chart.js to chart the data. EJS is used to create HTML to serve to the user and a MongoDB database to store user, social media and telemetry data. 
 
 
 # Install
