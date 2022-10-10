@@ -1,7 +1,12 @@
 
+// import zoomPlugin from 'chartjs-plugin-zoom';
+
+// Chart.register(zoomPlugin);
+
 let chartInfo = document.getElementById("script").getAttribute('chartInfo');
 chartInfo = JSON.parse(chartInfo);
 console.log(chartInfo);
+
 let channelId = chartInfo[0].channelid;//Wely 8
 let api = chartInfo[0].writeapi;
 let numpoints = chartInfo[0].numpoints;
@@ -9,7 +14,7 @@ let numpoints = chartInfo[0].numpoints;
 let someData = getData(channelId, api, numpoints);
 
 someData.then(response => {
-  console.log('returned objec', response);
+  console.log('returned object', response);
   makeChart(response.feeds, response.channel.name);
 });
 async function getData(channelId, api, numpoints){
@@ -37,54 +42,47 @@ async function getData(channelId, api, numpoints){
 
 function makeChart(data, name){
   //change the field names
-  let newData = data.map(({
-    "created_at": t,
-    ...rest
-  }) => ({
-    t,
-    ...rest
+  let newData = data.map(({"created_at": x, "field1": y}) => ({
+    x,  y,
   }));
-
-  newData = newData.map(({
-    "field1": y,
-    ...rest
-  }) => ({
-    y,
-    ...rest
-  }));
-
   console.log(newData);
+
+  let dataArr = [];
+  newData.forEach((el) => dataArr.push({"x":el.x,"y": Number(el.y)}));
+
+  console.log(dataArr);
 
   var ctx = document.getElementById("Chart").getContext("2d");
 
   var myChart = new Chart(ctx, {
-    type: 'line',
+    type: 'scatter',
     data: {
       datasets: [{
-        label: name,
-        data: newData,
-      }]
-    },    
-    options: {
-      scales: {
-        xAxes: [{
-          type: 'time',
-          time: {
-            unit: 'day',
-            tooltipFormat: 'YYYY MM DD h:mm:ss a'
-          },
-          scaleLabel: {
-            display: true,
-            labelString: 'Date'
-          }
-        }],
-        yAxes: [{
-          scaleLabel: {
-            display: true,
-            labelString: 'Mass (g)'
-          }
-        }]
-      }
+        label: 'Scatter Dataset',
+        data: dataArr,
+        backgroundColor: 'rgb(255, 99, 132)'
+      }],
     },
-  });
+    options: {
+        scales: {
+          x: {
+              type: 'time',
+              position: 'bottom'
+          }
+        },
+        plugins: {
+          zoom: {
+            zoom: {
+              wheel: {
+                enabled: true,
+              },
+              pinch: {
+                enabled: true
+              },
+              mode: 'xy',
+            }
+          }
+        }
+    }
+});
 }
