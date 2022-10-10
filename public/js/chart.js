@@ -1,5 +1,9 @@
 
-// import zoomPlugin from 'chartjs-plugin-zoom';
+// import { zoomPlugin } from 'chartjs-plugin-zoom.js';
+
+// const myFunction = require('some-package');
+
+// const zoomPlugin = require('chartjs-plugin-zoom');
 
 // Chart.register(zoomPlugin);
 
@@ -64,6 +68,7 @@ function makeChart(data, name){
       }],
     },
     options: {
+        responsive: true,
         scales: {
           x: {
               type: 'time',
@@ -73,6 +78,11 @@ function makeChart(data, name){
         plugins: {
           zoom: {
             zoom: {
+              pan: {
+								enabled: true,
+								mode: 'x',
+								scaleMode: 'y'
+							},
               wheel: {
                 enabled: true,
               },
