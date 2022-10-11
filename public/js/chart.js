@@ -62,6 +62,8 @@ function makeChart(data, name){
     type: 'scatter',
     data: {
       datasets: [{
+        // fill: true,
+        type: 'line',
         label: 'Scatter Dataset',
         data: dataArr,
         backgroundColor: 'rgb(255, 99, 132)'
@@ -71,28 +73,33 @@ function makeChart(data, name){
         responsive: true,
         scales: {
           x: {
+              // type: 'linear',
               type: 'time',
               position: 'bottom'
           }
         },
         plugins: {
           zoom: {
+            pan: {
+              enabled: true,
+              mode: 'x',
+              scaleMode: 'y'
+            },
             zoom: {
-              pan: {
-								enabled: true,
-								mode: 'x',
-								scaleMode: 'y'
-							},
+              // drag: {
+              //   enabled:true,
+              // },
               wheel: {
                 enabled: true,
               },
               pinch: {
                 enabled: true
               },
-              mode: 'xy',
+              mode: 'x',
+              scaleMode: 'y',
             }
           }
         }
-    }
-});
+      }
+  });
 }
