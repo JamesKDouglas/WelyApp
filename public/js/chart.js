@@ -71,12 +71,26 @@ function makeChart(data, name){
     },
     options: {
         responsive: true,
+        // showline: true,
         scales: {
           x: {
               // type: 'linear',
               type: 'time',
-              position: 'bottom'
-          }
+              position: 'bottom',
+              title: {
+                display: true,
+                text: 'Date'
+              }
+          },          
+          y: {
+            // type: 'linear',
+            // type: 'time',
+            position: 'bottom',
+            title: {
+              display: true,
+              text: 'Mass (g)'
+            }
+        }
         },
         plugins: {
           zoom: {
