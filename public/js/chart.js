@@ -1,11 +1,4 @@
 
-// import { zoomPlugin } from 'chartjs-plugin-zoom.js';
-
-// const myFunction = require('some-package');
-
-// const zoomPlugin = require('chartjs-plugin-zoom');
-
-// Chart.register(zoomPlugin);
 
 let chartInfo = document.getElementById("script").getAttribute('chartInfo');
 chartInfo = JSON.parse(chartInfo);
@@ -64,13 +57,19 @@ function makeChart(data, name){
       datasets: [{
         // fill: true,
         type: 'line',
-        label: 'Scatter Dataset',
+        label: 'Mass of Coffee Tree',
         data: dataArr,
         backgroundColor: 'rgb(255, 99, 132)'
       }],
     },
     options: {
+        // element: {
+        //   line: {
+        //     fill: true,
+        //   }
+        // },
         responsive: true,
+        maintainAspectRatio: false,
         // showline: true,
         scales: {
           x: {
