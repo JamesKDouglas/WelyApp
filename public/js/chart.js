@@ -1,5 +1,5 @@
-
-
+// import { BarWithErrorBarsController, BarWithErrorBar } from 'chartjs-chart-error-bars';
+// const {BarWithErrorBarsController} = require('chartjs-chart-error-bars');
 let chartInfo = document.getElementById("script").getAttribute('chartInfo');
 chartInfo = JSON.parse(chartInfo);
 console.log(chartInfo);
@@ -45,18 +45,18 @@ function makeChart(data, name){
   console.log(newData);
 
   let dataArr = [];
-  newData.forEach((el) => dataArr.push({"x":el.x,"y": Number(el.y)}));
+  newData.forEach((el) => dataArr.push({"x":el.x,"y": Number(el.y), "yMax":Number(el.y)+2, "yMin":Number(el.y)-2}));
 
   console.log(dataArr);
 
   var ctx = document.getElementById("Chart").getContext("2d");
 
   var myChart = new Chart(ctx, {
-    type: 'scatter',
+    type: 'scatterWithErrorBars',
     data: {
       datasets: [{
         // fill: true,
-        type: 'line',
+        // type: 'line',
         label: 'Mass of Coffee Tree',
         data: dataArr,
         backgroundColor: 'rgb(255, 99, 132)'
