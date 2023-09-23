@@ -56,15 +56,23 @@ function makeChart(data, name){
   let field = localStorage.getItem("field");
   console.log("retrieved fieldname:", field);
   let newData = {};
+
   //One way to show temperature data is to tweak this.
+  //I feel like I could do this in a more direct fashion without the if statements,
+  //but I notice I can't just use the variable directly inside the curly brackets  must be a scope issue.
+  let yTitle = "Mass (g)";
   if (field === "field3"){
+    //field 3 is temperature
     newData = data.map(({"created_at": x, "field3": y}) => ({
       x,  y,
     }));
+    yTitle = "Temperature (deg C)";
   } else {
+    //field 1 is mass
     newData = data.map(({"created_at": x, "field1": y}) => ({
       x,  y,
     }));
+    
   }
 
   console.log(newData);
@@ -112,7 +120,7 @@ function makeChart(data, name){
             position: 'bottom',
             title: {
               display: true,
-              text: 'Mass (g)'
+              text: yTitle,
             }
         }
         },

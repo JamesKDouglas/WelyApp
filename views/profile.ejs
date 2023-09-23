@@ -19,62 +19,70 @@
   <div class="row mt-5">
       <div class="col-6">
           <div class="mt-5">
-            <h2>Add an observation</h2>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-              <div class="mb-3">
-                  <label for="title" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="title" name="title">
+            <div class = "card">
+              <h2 class = "card-title m-3">Add an Observation</h2>
+              <div class="card-body">
+                <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+                  <div class="mb-3">
+                      <label for="title" class="form-label">Title</label>
+                      <input type="text" class="form-control" id="title" name="title">
+                  </div>
+                  <div class="mb-3">
+                    <label for="caption" class="form-label">Caption</label>
+                    <textarea class="form-control" id="caption" name="caption"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="imgUpload" class="form-label">Image</label>
+                    <input type="file" class="form-control" id="imageUpload" name="file">
+                  </div>
+                  <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+                </form>
               </div>
-              <div class="mb-3">
-                <label for="caption" class="form-label">Caption</label>
-                <textarea class="form-control" id="caption" name="caption"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
-              </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-            </form>
+            </div>
           </div>
           
           <div class="mt-5">
-            <h2>Set Chart Parameters</h2>
-            
-            <form action="/chart/putChart" method="POST">
+            <div class = "card">
+              <h2 class = "card-title m-3">Set Chart Parameters</h2>
               
-              <input type="radio" id="mass" name="field" value="mass">
-              <label for="mass">mass</label><br>
-              <input type="radio" id="temperature" name="field" value="temperature">
-              <label for="temperature">temperature</label><br>
-            
-              <div class="mb-3">
-                <label for="channelid" class="form-label">ChannelID</label>
-                <input type="text" class="form-control" id="channelid" name="channelid">
+              <div class = "card-body">
+                <form action="/chart/putChart" method="POST">
+                  
+                  <input type="radio" id="mass" name="field" value="mass">
+                  <label for="mass">mass</label><br>
+                  <input type="radio" id="temperature" name="field" value="temperature">
+                  <label for="temperature">temperature</label><br>
+                
+                  <div class="mb-3">
+                    <label for="channelid" class="form-label">ChannelID</label>
+                    <input type="text" class="form-control" id="channelid" name="channelid">
+                  </div>
+                  <div class="mb-3">
+                    <label for="writeapi" class="form-label">WriteAPI</label>
+                    <input type="text" class="form-control" id="writeapi" name="writeapi">
+                  </div>
+                  <div class="mb-3">
+                    <label for="numpoints" class="form-label"># points to show (up to 8000)</label>
+                    <input type="text" class="form-control" id="numpoints" name="numpoints">
+                  </div>
+                  <div class="mb-3">
+                    <label for="startdate" class="form-label">Start Date (optional; defaults to # points ago from now)</label>
+                    <input type="text" class="form-control" id="startdate" name="startdate">
+                  </div>
+                  <div class="mb-3">
+                    <label for="enddate" class="form-label">End Date (optional; defaults to now)</label>
+                    <input type="text" class="form-control" id="enddate" name="enddate">
+                  </div>
+                  <!--
+                  <div class="mb-3">
+                    <label for="downsample" class="form-label">Downsample (1 for no downsampling, 2 to skip every second point etc.)</label>
+                    <input type="text" class="form-control" id="downsample" name="downsample">
+                  </div>
+                  -->
+                  <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+                </form>
               </div>
-              <div class="mb-3">
-                <label for="writeapi" class="form-label">WriteAPI</label>
-                <input type="text" class="form-control" id="writeapi" name="writeapi">
-              </div>
-              <div class="mb-3">
-                <label for="numpoints" class="form-label"># points to show (up to 8000)</label>
-                <input type="text" class="form-control" id="numpoints" name="numpoints">
-              </div>
-              <div class="mb-3">
-                <label for="startdate" class="form-label">Start Date (optional; defaults to # points ago from now)</label>
-                <input type="text" class="form-control" id="startdate" name="startdate">
-              </div>
-              <div class="mb-3">
-                <label for="enddate" class="form-label">End Date (optional; defaults to now)</label>
-                <input type="text" class="form-control" id="enddate" name="enddate">
-              </div>
-              <!--
-              <div class="mb-3">
-                <label for="downsample" class="form-label">Downsample (1 for no downsampling, 2 to skip every second point etc.)</label>
-                <input type="text" class="form-control" id="downsample" name="downsample">
-              </div>
-              -->
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-            </form>
+            </div>
           </div>
       </div>
       <div class="col-6">
@@ -88,7 +96,7 @@
         <% } %>
         </ul>
         <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+          <a class="btn btn-primary" href="/feed">Full Screen Feed</a>
         </div>  
       </div>  
     </div>
