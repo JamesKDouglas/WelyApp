@@ -39,7 +39,14 @@
           
           <div class="mt-5">
             <h2>Set Chart Parameters</h2>
+            
             <form action="/chart/putChart" method="POST">
+              
+              <input type="radio" id="mass" name="field" value="mass">
+              <label for="mass">mass</label><br>
+              <input type="radio" id="temperature" name="field" value="temperature">
+              <label for="temperature">temperature</label><br>
+            
               <div class="mb-3">
                 <label for="channelid" class="form-label">ChannelID</label>
                 <input type="text" class="form-control" id="channelid" name="channelid">
@@ -51,6 +58,14 @@
               <div class="mb-3">
                 <label for="numpoints" class="form-label"># points to show (up to 8000)</label>
                 <input type="text" class="form-control" id="numpoints" name="numpoints">
+              </div>
+              <div class="mb-3">
+                <label for="startdate" class="form-label">Start Date (optional; defaults to # points ago from now)</label>
+                <input type="text" class="form-control" id="startdate" name="startdate">
+              </div>
+              <div class="mb-3">
+                <label for="enddate" class="form-label">End Date (optional; defaults to now)</label>
+                <input type="text" class="form-control" id="enddate" name="enddate">
               </div>
               <!--
               <div class="mb-3">

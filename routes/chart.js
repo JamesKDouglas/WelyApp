@@ -7,6 +7,6 @@ const chartController = require("../controllers/chart");
 router.post("/putChart",  upload.none(), chartController.putChart);
 
 //the route could be /:id if you want multiple charts. But I start with just one.
-router.get("/getChart", chartController.getChart);
+// router.get("/getChart", chartController.getChart);
 
 module.exports = router;

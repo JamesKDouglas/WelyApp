@@ -8,11 +8,12 @@ module.exports = {
       //Note that with this method every user must be granted a default chart record upon signing up. This MongoDB method cannot create records, only update those that already exist.
       //I try to use upsert to change that.
       // console.log(`update chart with the infor: chanellID: ${req.body.channelid}, writeAPI: ${req.body.writeapi}, numpoints: ${req.body.numpoints}`);
-      console.log(req.body);
-      await Chart.findOneAndUpdate({user: req.user.id},{
+      console.log("req.body:", req.body);
+      await Chart.findOneAndUpdate({user: req.user.id},{    
         channelid: req.body.channelid,
         writeapi: req.body.writeapi,
         numpoints: req.body.numpoints,
+        field: req.body.field,
       }, {upsert: true});
 
       console.log("chart parameters have been modified!");
@@ -21,12 +22,13 @@ module.exports = {
       console.log(err);
     }
   },
-  getChart: async (req, res) => {
-    try {
-      const chart = await Chart.findById(req.params.id);
-      res.render("profile.ejs", { chart: chart, post: post, user: req.user });
-    } catch (err) {
-      console.log(err);
-    }
-  },
+  // getChart: async (req, res) => {
+  //   try {
+  //     const chart = await Chart.findById(req.params.id);
+  //     res.render("profile.ejs", { chart: chart, post: post, user: req.user, field:req.field, });
+  //     console.log("getting chart. Req obj:", req);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // },
 };

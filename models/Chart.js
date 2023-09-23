@@ -14,6 +14,10 @@ const chartSchema = new mongoose.Schema({
     type: Number,
     require: true,
   },
+  field: {
+    type: String,
+    require: true,
+  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
