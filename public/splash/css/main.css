@@ -109,7 +109,7 @@ input, select, textarea {
 		font-weight: 300;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1, h3, h4, h5, h6 {
 		font-weight: 400;
 		color: #483949;
 		line-height: 1.25em;
@@ -2176,7 +2176,8 @@ input, select, textarea {
 
 	#header {
 		position: relative;
-		background-image: url("../../images/header.jpg");
+		background-image: url("../../images/SeedlingHeader2.jpg");
+		
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
@@ -2198,7 +2199,7 @@ input, select, textarea {
 			z-index: 1;
 			margin: 0;
 			display: inline-block;
-			vertical-align: middle;
+			vertical-align: top;
 		}
 
 		#header header {
@@ -2214,6 +2215,11 @@ input, select, textarea {
 			color: #fff;
 			font-size: 3em;
 			line-height: 1em;
+		}
+
+		#header h2 {
+			color: rgb(164, 164, 164);
+			font-weight: 400;
 		}
 
 			#header h1 a {
