@@ -2358,6 +2358,12 @@ input, select, textarea {
 					display: none;
 				}
 
+				#nav {
+					display: flex;
+					align-content: center;
+					justify-content: space-between;
+				}
+
 	.dropotron {
 		background: rgba(255, 255, 255, 0.975);
 		padding: 1em 1.25em 1em 1.25em;
