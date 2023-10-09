@@ -274,6 +274,12 @@ input, select, textarea {
 
 		}
 
+	.center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color:pink ! important;
+	}
 /* Row */
 
 	.row {
@@ -2310,6 +2316,7 @@ input, select, textarea {
 			display: flex;
 			flex-direction: row;
 			align-items: center;
+			font-weight: 700;
 		}
 
 			#nav > ul:before, #nav > ul:after {
@@ -2797,6 +2804,7 @@ input, select, textarea {
 
 			.image.featured {
 				margin: 0 0 2em 0;
+
 			}
 
 			.image.left {
