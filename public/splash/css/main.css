@@ -1888,6 +1888,10 @@ input, select, textarea {
 				margin-top: 0;
 			}
 
+	.contained {
+		max-width: 100% !important;
+	}
+
 /* Menu */
 
 	ul.menu {
@@ -2106,6 +2110,12 @@ input, select, textarea {
 
 	.post.stub {
 		text-align: center;
+	}
+     
+	stub2 {
+		display:flex;
+		max-width: 100%;
+		
 	}
 
 		.post.stub header {
