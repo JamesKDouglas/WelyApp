@@ -6,7 +6,7 @@ module.exports = {
   },
   getSplash: async (req, res) => {
     try {
-      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      const posts = await Post.find().limit(5).sort({ createdAt: "desc" }).lean();
       res.render("splash.ejs", { posts: posts });
     } catch (err) {
       console.log(err);
