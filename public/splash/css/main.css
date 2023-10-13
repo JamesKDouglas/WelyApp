@@ -188,6 +188,13 @@ input, select, textarea {
 		text-align: justify;
 	}
 
+	p.big {
+		text-align: justify;
+		font-weight: 400;
+		font-size: 2em;
+		line-height: 1.5;
+	}
+
 	br.clear {
 		clear: both;
 	}

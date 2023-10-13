@@ -1,8 +1,13 @@
 const Post = require("../models/Post");
 
 module.exports = {
-  getInvest: (req, res) => {
-    res.render("invest.ejs");
+  getInvest: async (req, res) => {
+    try {
+      const posts = await Post.find().limit(5).sort({ createdAt: "desc" }).lean();
+      res.render("invest.ejs", { posts: posts.slice(0,2) });
+    } catch (err) {
+      console.log(err);
+    }
   },
   getSplash: async (req, res) => {
     try {
