@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Wely Device Models</title>
+		<%-include('partials/headSplash') -%>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<%- include('partials/navSplash') -%>
+
+			<!-- Main -->
+				<div class="wrapper style1">
+
+					<div class="container">
+						<article id="main" class="special">
+							
+							<header>
+								<h2>Different environment, different Wely</h2>
+								<p>
+									There are 4 different versions, engineered for specific use cases.
+								</p>
+							</header>
+						</article>
+
+						<hr />
+	<!-- Carousel -->
+				<section class="carousel">
+					<div class="reel" style="overflow: visible; transform: translate(0px, 0px);">
+
+						<article class="">
+							<a href="/#" class="image featured"><img src="./images/SeedlingTray.jpg" alt="">Two-sensor model</a>
+							<header>
+								<h3><a href="/#Seedlings">For Seedlings.</a></h3>
+							</header>
+							<p>Two sensors give a wider platform for monitoring a standard seedling tray.</p>
+						</article>
+
+						<article class="">
+							<a href="/#" class="image featured"><img src="./images/GraySmall.jpg" alt="">Waterproof housing</a>
+							<header>
+								<h3><a href="/#Greenhouse">For commercial production.</a></h3>
+							</header>
+							<p>Monitor irrigation flow in a commercial setting.</p>
+						</article>
+
+						<article class="">
+							<a href="/#" class="image featured"><img src="./images/f1735680.jpg" alt="">4kg max</a>
+							<header>
+								<h3><a href="/#Small">For Small to Medium Plants.</a></h3>
+							</header>
+							<p>A sensitive sensor for sensitive plants.</p>
+						</article>
+
+						<article class="">
+							<a href="/#" class="image featured"><img src="./images/IMG_2502.JPG" alt="">12 kg max</a>
+							<header>
+								<h3><a href="/#Large">For large plants.</a></h3>
+							</header>
+							<p>Sensitive enough for orchids, strong enough for ficus. </p>
+						</article>
+					</div>
+				<span class="forward" style=""></span><span class="backward" style=""></span></section>
+
+            <hr />
+
+
+        <!--Devices detail-->
+            <article class="special">
+                    
+                <img class = "image small" src = "./images/All10WelyDevices.jpeg" alt =""/>
+                <header>
+                    <h2 id = "seedlings">For Seedlings</h2>
+                   
+                </header>
+                <!--how can I make this text larger? The CSS seems to be ignored. I don't like using inline styles but they are the only thing that seems to work?-->
+                <p style = "font-size: 2em">
+                    Two load cells provide an extra large platform, designed for trays.
+                </p>
+            </section>
+        </article>
+
+            <hr />
+            <article class="special">       
+                <header>
+                    <h2 id="#commercial">For Commercial Production</h2>
+                </header>
+                <p>
+                    With a waterproof polymer housing, stainless fittings, supercharged amplifier and a large load cell this unit is ready for the greenhouse.
+                </p>
+                <p>
+                    Advanced signal processing and design makes this unit compatible with the common greenhouse technique of "flow-through". 
+                    Because irrigation water has some salts in it, it is common to rinse the potting media regularly. That means irrigating 
+                    so much that a fraction of the irrigation water runs out of the bottom of the pot.
+                </p>
+                <p>
+                    The convoluted top plate of this Wely slows water flow during a flow-through event. With advanced signal processing
+                    this technique allows the device to provide accurate data of how much water was delivered, even though not all water is absorbed by the growing media.
+                    The data can then be used to calibrate the irrigation system.
+                </p>
+            </section>
+            </article>
+
+            <hr />
+            <article class="special">
+                    
+                <header>
+                    <h2 id="#medium">For Small to Medium Plants</h2>
+                </header>
+                <p>
+                    This model is developed for home use, with a beautiful rock maple housing.
+                    With a load cell tested for long-term accuracy up to 4kg, this device is great 
+                    for small to medium sized plants in the home. The smaller load cell provides more sensitivity, allowing +/-1g readings.
+                </p>
+                <p>
+                    This device can be used to monitor cut flowers or a fermentation. Cut flowers 
+                    will change their water use rate as the stems become blocked by bacteria. 
+                    Fermentations can be monitored by mass because when bubbles of carbon dioxide leave the fermentation mass is reduced.
+                </p>
+            </section>
+            </article>
+
+            <hr />
+            <article class="special">
+                    
+                <header>
+                    <h2 id="#large">Large Plants</h2>
+                </header>
+                <p>
+                    This model is equipped with a beautiful maple housing and a strong aluminum sensor, providing long term stable data 
+                    for masses up to 12 kg. This makes it ideal for large houseplants.
+                </p>
+            </section>
+            </article>		
+	</div>
+
+			<!-- Footer -->
+			<%- include('partials/footerSplash') -%>
+
+		<!-- Scripts -->
+			<script src="splash/js/jquery.min.js"></script>
+			<script src="splash/js/jquery.dropotron.min.js"></script>
+			<script src="splash/js/jquery.scrolly.min.js"></script>
+			<script src="splash/js/jquery.scrollex.min.js"></script>
+			<script src="splash/js/browser.min.js"></script>
+			<script src="splash/js/breakpoints.min.js"></script>
+			<script src="splash/js/util.js"></script>
+			<script src="splash/js/main.js"></script>
+
+	</body>
+</html>

@@ -1774,7 +1774,7 @@ input, select, textarea {
 	}
 
 	header {
-		margin: 0 0 1em 0;
+		margin: 2em 0 1em 0;
 	}
 
 		header > p {
@@ -1812,6 +1812,12 @@ input, select, textarea {
 			display: block;
 			width: 100%;
 			margin: 0 0 4em 0;
+		}
+
+		.image.small {
+			display: block;
+			width: 50%;
+			margin: 0 auto;
 		}
 
 		.image.left {
@@ -2815,6 +2821,11 @@ input, select, textarea {
 
 			header > p {
 				font-size: 1.25em;
+			}
+
+			#para {
+				font-size: 32px !important;
+				color: red !important;
 			}
 
 		/* Image */
