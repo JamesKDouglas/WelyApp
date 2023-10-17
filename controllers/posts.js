@@ -22,7 +22,19 @@ module.exports = {
       console.log(err);
     }
   },
+  getPostGuest: async (req, res) => {
+    console.log("begin guest post retrieval")
+    try {
+      let user = (req.user) ? req.user : "Guest";
+      const post = await Post.findById(req.params.id);
+      console.log("guest requested a post!",post);
+      res.render("post.ejs", { post: post, user: user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getPost: async (req, res) => {
+    console.log("begin regular post retrieval")
     try {
       const post = await Post.findById(req.params.id);
       res.render("post.ejs", { post: post, user: req.user });
