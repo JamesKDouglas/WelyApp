@@ -40,11 +40,11 @@
 				</section>
 
 			<!-- Carousel -->
-				<section class="carousel">
+				<section class="carousel wide">
 					<div class="reel" style="overflow: visible; transform: translate(0px, 0px);">
 
 						<article class="">
-							<a href="#start" class="image featured"><img src="startLogo" alt=""></a>
+							<a href="#start" class="image featured"><svg xmlns="http://www.w3.org/2000/svg" style = "margin-top:50px" height="4em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M512 32c0 113.6-84.6 207.5-194.2 222c-7.1-53.4-30.6-101.6-65.3-139.3C290.8 46.3 364 0 448 0h32c17.7 0 32 14.3 32 32zM0 96C0 78.3 14.3 64 32 64H64c123.7 0 224 100.3 224 224v32V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V320C100.3 320 0 219.7 0 96z"/></svg></a>
 							<header>
 								<h3><a href="#start">Start</a></h3>
 							</header>
@@ -52,7 +52,7 @@
 						</article>
 
 						<article class="">
-							<a href="#grow" class="image featured"><img src="GrowLogo" alt=""></a>
+							<a href="#grow" class="image featured"><svg xmlns="http://www.w3.org/2000/svg" style = "margin-top:50px" height="4em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M378.31 378.49L298.42 288h30.63c9.01 0 16.98-5 20.78-13.06 3.8-8.04 2.55-17.26-3.28-24.05L268.42 160h28.89c9.1 0 17.3-5.35 20.86-13.61 3.52-8.13 1.86-17.59-4.24-24.08L203.66 4.83c-6.03-6.45-17.28-6.45-23.32 0L70.06 122.31c-6.1 6.49-7.75 15.95-4.24 24.08C69.38 154.65 77.59 160 86.69 160h28.89l-78.14 90.91c-5.81 6.78-7.06 15.99-3.27 24.04C37.97 283 45.93 288 54.95 288h30.63L5.69 378.49c-6 6.79-7.36 16.09-3.56 24.26 3.75 8.05 12 13.25 21.01 13.25H160v24.45l-30.29 48.4c-5.32 10.64 2.42 23.16 14.31 23.16h95.96c11.89 0 19.63-12.52 14.31-23.16L224 440.45V416h136.86c9.01 0 17.26-5.2 21.01-13.25 3.8-8.17 2.44-17.47-3.56-24.26z"/></svg></a>
 							<header>
 								<h3><a href="#grow">Grow</h3>
 							</header>
@@ -60,7 +60,7 @@
 						</article>
 
 						<article class="">
-							<a href="#display" class="image featured"><img src="displayLogo" alt=""></a>
+							<a href="#display" class="image featured"><svg xmlns="http://www.w3.org/2000/svg" style = "margin-top:50px" height="4em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M568.25 192c-29.04.13-135.01 6.16-213.84 83-33.12 29.63-53.36 63.3-66.41 94.86-13.05-31.56-33.29-65.23-66.41-94.86-78.83-76.84-184.8-82.87-213.84-83-4.41-.02-7.79 3.4-7.75 7.82.23 27.92 7.14 126.14 88.77 199.3C172.79 480.94 256 480 288 480s115.19.95 199.23-80.88c81.64-73.17 88.54-171.38 88.77-199.3.04-4.42-3.34-7.84-7.75-7.82zM287.98 302.6c12.82-18.85 27.6-35.78 44.09-50.52 19.09-18.61 39.58-33.3 60.26-45.18-16.44-70.5-51.72-133.05-96.73-172.22-4.11-3.58-11.02-3.58-15.14 0-44.99 39.14-80.27 101.63-96.74 172.07 20.37 11.7 40.5 26.14 59.22 44.39a282.768 282.768 0 0 1 45.04 51.46z"/></svg></a>
 							<header>
 								<h3><a href="#display">Display</a></h3>
 							</header>
@@ -71,11 +71,16 @@
 
 			<!-- Main -->
 				<div class="wrapper style2" id = "start">
-                    <h1>Start</h1>
-                    <p>Water seedlings with precision using sensitive sensors.</p>
-					<article id="startdisease" class="container special">
-						<img src="dampingOff" alt="">
+                    <article class="container special">
 						<header>
+                            <h2><span>Start<span></h2>
+                            <p>Water seedlings with precision using sensitive sensors.</p>
+                        </header>
+					</article>
+
+					<article id="startdisease" class="container special">
+                        <header>
+                            <img src="http://www.edinburghgardenschool.com/wp-content/uploads/2020/09/damping-off-300x238-1.jpg" alt="">
 							<h2>Prevent disease.</h2>
 							<p>
 								Overwatering leads to disease.
@@ -89,8 +94,9 @@
 						</p>
 					</article>
                     <article id="startdisease" class="container special">
-						<img src="germinate" alt="">
+						
 						<header>
+                                <img class = "mask1" src="./images/germinate.jpeg" alt="Ritesh Man Tamrakar, 'Germinating Ideas'" width="600" height="400">
 							<h2>Germinate</h2>
 							<p>
 								Under watering delays germination.
@@ -103,8 +109,8 @@
 					</article>
 
                     <article id="startdisease" class="container special">
-						<img src="clock" alt="">
 						<header>
+							<svg xmlns="http://www.w3.org/2000/svg" height="10em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>
 							<h2>Keep your schedule</h2>
 							<p>
 								Germinate quickly without risk.
@@ -119,11 +125,16 @@
 
 				</div>
                 <div class="wrapper style2" id = "grow">
-                    <h1>Grow</h1>
-                    <p>Grow your plants big and strong.</p>
-					<article id="grownutrition" class="container special">
-						<img src="healthyplant" alt="">
+                    <article class="container special">
 						<header>
+                            <h2><span>Grow<span></h2>
+                            <p>Grow your plants big and strong.</p>
+                        </header>
+					</article>
+
+					<article id="grownutrition" class="container special">
+						<header>
+							<img class = "mask1" src="./images/mums.jpeg" alt="Chris Hawes, 'Mums'">
 							<h2>Nurture with nutrition.</h2>
 							<p>
 								Water transports nutrients from the soil. Good water supply allows reliable nutrient transport.
@@ -136,8 +147,9 @@
                         </p>
 					</article>
                     <article id="growworkload" class="container special">
-						<img src="personworkingHard" alt="">
+					
 						<header>
+							<img class = "mask1" src = "./images/workload.jpeg" alt = "UNTIL THEN ......., 'workload'. A bee working to gather pollen and honey.">
 							<h2>Reduce your workload</h2>
 							<p>
 								Adapt and plan with a remote view of your plants.
@@ -151,11 +163,11 @@
 					</article>
 
                     <article id="growYield" class="container special">
-						<img src="yield chart?" alt="">
 						<header>
+							<img class = "mask1" src="./images/bigHarvest.jpeg" alt = "Beth Siddens, 'Big Harvest">
 							<h2>Increase yield</h2>
 							<p>
-								Many yields increase when a plant faces the stress of controlled drought.
+								Ok, maybe not as much as in the photo. But many yields increase when a plant faces the stress of controlled drought.
 							</p>
 						</header>
 						<p>
@@ -170,25 +182,32 @@
 				</div>
 
                 <div class="wrapper style2" id = "grow">
-                    <h1>Display</h1>
-                    <p>Put your best flower forward.</p>
-					<article id="displayshelf" class="container special">
-						<img src="cutFlowers" alt="">
+                    <article class="container special">
 						<header>
+                            <h2><span>Display<span></h2>
+                            <p>Put your best flower forward.</p>
+                        </header>
+					</article>
+
+					<article id="displayshelf" class="container special">
+						
+						<header>
+							<img class = "mask1" src="./images/IMG_8414TOP.jpeg" alt = "cut flowers">
 							<h2>Keep cut flowers fresh</h2>
 							<p>
 								Cut flowers droop from dehydration.
                             </p>
 						</header>
 						<p>
-                            The end of the life of cut flowers normally comes from stems being blocked. That happens when bacteria or air enters the stems.
+                            The end of the life of cut flowers normally comes from stems being blocked. That happens when bacteria grows in the stems.
                             Cutting the stems can extend shelf life. But how do you know when that's needed? If you run a business that's too busy to check on your cut flowers, Wely can do it for you.
                             When stems get blocked and need to be re-cut water use rate will drop. The Wely Device will notice!
                         </p>
 					</article>
                     <article id="displaydead" class="container special">
-						<img src="deadflowers?" alt="">
+				
 						<header>
+							<img class = "mask1" src="./images/deadFlowers.jpeg" alt = "Ron Reiring, 'Angry Pale Penguin (or maybe an owl). Keep your stuffed owl friends happy and replace flowers on time.">
 							<h2>Remove flowers when they are done.</h2>
 							<p>
 								Cut flowers don't last forever. Don't display ones past their prime.
@@ -202,8 +221,9 @@
 					</article>
 
                     <article id="displaydrop" class="container special">
-						<img src="orchid" alt="">
+						
 						<header>
+							<img class = "mask1" src = "./images/orchid.jpg" alt = "orchid">
 							<h2>Keep living plants flowering</h2>
 							<p>
 								Plants often drop their flowers as a response to drought.
@@ -219,9 +239,22 @@
 					</article>
 
 				</div>
+				<div class="wrapper style2" id = "grow">
+                    <article class="container special">
+						<header>
+                        <h2>Innovate</h2>
 
-			<!-- Features -->
-            other - monitor fermentations. Watch your milk jug.
+						</header>
+						<p> Mass is universal and Wely reports temperature as well.
+							Innovate by applying the device to your project. 
+							Monitor the progress of a fermentation? 
+							Get a signal when a container is empty?
+							Wely has been used to monitor incubation of microbial populations,
+							 watch for low temperature events which cause flower drop,
+							 dry material, 
+							 and detect the presence of an object.</p>
+					</article>
+				</div>
 			<!-- Footer -->
 			<%- include('partials/footerSplash') -%>
 

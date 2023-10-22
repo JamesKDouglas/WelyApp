@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	splash by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Making - The Making of a Wely Device</title>
+		<%-include('partials/headSplash') -%>
+	</head>
+        
+    <body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+                    <%- include('partials/navSplash') -%>
+                </div>
+            
+            <!-- Main -->
+                <div class="wrapper style1">
+
+                    <div class="container">
+                        <article id="main" class="special">
+                            <header>
+                                <h2><a href="#">The Making Of</a></h2>
+                                <p>
+                                    Each device is handmade in our Vancouver workshop.
+                                </p>
+                            </header>
+                            <a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+                            <p>
+                                The electronics are designed designed by computer assisted drawing and 
+                                soldered together in our Vancouver workshop. The housing is made out of wood carved by a robot,
+                                or bio-plastic and 3D printing. Our custom software is coded by passionate 
+                                scientists and engineers.
+                            </p>
+                            <section id = "machining">
+                                <header>
+                                    <h3>Machining</h3>
+                                    (how to have a video display behind text in a section?)
+                                </header>
+                                <p>
+                                   The robot we use to carve out a hardwood housing is called a Computer Numerically Controlled Router. 
+                                   A cutting bit spins at 18 000 RPM and follows a pattern made from a computer drawing. Usually we make this part out of Canadian Rock Maple. 
+                                   That's the same tree we make maple syrup from!
+                                </p>
+                                <p>
+                                    (video section - slow motion machining if I can find that old cellphone?)
+                                </p>
+                            </section>
+                            <section>
+                                <header>
+                                    <h3>3D printing</h3>
+                                </header>
+                                <p>
+                                    For waterproof housings we use a corn plastic called "polylactic acid". This plastic gets soft with heat and 
+                                    we extrude it using a robot to deposit the plastic in just the right shape. Doing this lets us make very complex shapes and 
+                                    save plastic. 
+                                </p>
+                            </section>
+                            <section>
+                                <header>
+                                    <h3>Electronics</h3>
+                                </header>
+                                <p>
+                                    First we design our electronic circuits using circuit design software. We get a printing company to make
+                                    printed circuit boards for us. Once they ship that to our workshop we attach parts to it using "surface mount soldering".
+                                    Then we attach all the wires from the sensors!
+                                </p>
+                            </section>
+                            <section>
+                                <header>
+                                    <h3>Software</h3>
+                                </header>
+                                <p>
+                                    We write code for two different kinds of computers. The first is "firmware". It is written in a language called C++
+                                    and is the software that sits right in the physical device.
+                                    The second kind of computer program is mostly written in Javascript. 
+                                    It controls all the computers that sit "in the cloud" and work together to 
+                                    deliver data to your phone. 
+                                </p>
+                            </section>
+                        </article>
+                        <hr />
+                        <div class="row">
+                            <article class="col-4 col-12-mobile special">
+                                <a href="#" class="image featured"><img id = "testimg" src="./images/IMG_9041.jpg" alt="" /></a>
+                                <header>
+                                    <h3><a href="#">Housing</a></h3>
+                                </header>
+                                <p>
+                                    We use hardwood and corn plastic for the housing.    
+                                </p>
+                            </article>
+                            <article class="col-4 col-12-mobile special">
+                                <a href="#" class="image featured"><img src="./images/circuit.jpg" alt="" /></a>
+                                <header>
+                                    <h3><a href="#">Electronics</a></h3>
+                                </header>
+                                <p>
+                                    We make the little computer that sits inside the Wely Device.    
+                                </p>
+                            </article>
+                            <article class="col-4 col-12-mobile special">
+                                <a href="#" class="image featured"><img src="./images/software.png" alt="" /></a>
+                                <header>
+                                    <h3><a href="#">Software</a></h3>
+                                </header>
+                                <p>
+                                    Written in C++ and Javascript.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+			<%- include('partials/footerSplash') -%>
+
+
+            <!-- Scripts -->
+                <script src="splash/js/jquery.min.js"></script>
+                <script src="splash/js/jquery.dropotron.min.js"></script>
+                <script src="splash/js/jquery.scrolly.min.js"></script>
+                <script src="splash/js/jquery.scrollex.min.js"></script>
+                <script src="splash/js/browser.min.js"></script>
+                <script src="splash/js/breakpoints.min.js"></script>
+                <script src="splash/js/util.js"></script>
+                <script src="splash/js/main.js"></script>
+                <script src="splash/js/socialMedUpdate.js"></script>
+    
+        </body>
+    </html>
