@@ -22,22 +22,17 @@
                         <img src="./images/WelyLogo.svg">
                     </header>
                     <ul class="divided">
-                        <% for(var i=0; i<2; i++) {%>
-                            <li>
+                        <% for(var i=0; i<2; i++) { %>
+                            <li style = "background-color:white">
                                     
                                     <a href="/post/guest/<%= posts[i]._id%>">
                                     <img class = "contained" src="<%= posts[i].image%>">
                                     </a> 
-                                    <p><%=posts[i].title%></p>
-                                    <p><%=posts[i].caption%></p>
-                            <hr>
+                                    <p style = "background-color:white"><%=posts[i].title%></p>
+                                    <p style = "background-color:white"><%=posts[i].caption%></p>
                             </li>
                           <% } %>
                           <% console.log(posts) %>
-
-                        <li>
-
-                        </li>
                     </ul>
                 </section>
 

@@ -23,7 +23,9 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+	line-height:normal;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -182,10 +184,27 @@ input, select, textarea {
 
 	p, ul, ol, dl, table {
 		margin-bottom: 1em;
+
 	}
 
 	p {
 		text-align: justify;
+
+	}
+
+	#machining p{
+		background: rgba(0, 0, 0, 0);
+	}
+
+	body p{
+		color:black;
+		padding-top:10px;
+		background-color:rgba(255,255,255,0);
+	}
+	#white body p{
+		color:black;
+		padding-top:10px;
+		background-color:rgba(255,255,255, 1);
 	}
 
 	p.big {
@@ -294,6 +313,12 @@ input, select, textarea {
 		flex-wrap: wrap;
 		box-sizing: border-box;
 		align-items: stretch;
+
+	}
+	.row .special img {
+		width: 300px ; 
+		height: 300px; 
+		object-fit: cover ;
 	}
 
 		.row > * {
@@ -1769,6 +1794,14 @@ input, select, textarea {
 			text-align: center;
 		}
 
+		article.special > header > h2 > span {
+			color:red;
+			font-weight:400;
+		}
+		article.special > header > h2 > span {
+			color:red;
+			font-weight:400;
+		}
 	.row > section, .row > article {
 		margin-bottom: 0;
 	}
@@ -1797,6 +1830,15 @@ input, select, textarea {
 		border: 0;
 		outline: 0;
 	}
+	
+		.mask1 {
+			-webkit-mask-image: url(../../images/mask1.svg);
+			mask-image: url(../../images/mask1.svg);
+			-webkit-mask-size: 100%;
+			mask-size: 100%;
+			-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+		}
 
 		.image img {
 			display: block;
@@ -2192,16 +2234,34 @@ input, select, textarea {
 /* Wrapper */
 
 	.wrapper {
-		background: #fff;
+		background: rgba(255,255,255,0.5);
 		margin: 0 0 2em 0;
 		padding: 6em 0 6em 0;
 	}
 
 		.wrapper.style2 {
-			padding-top: 0;
+			padding-top: 10px;
 		}
 
 /* Header */
+#background-video {
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+  }
+  @media (max-width: 750px) {
+    #background-video { display: none; }
+    body {
+      background: url("https://assets.codepen.io/6093409/river.jpg") no-repeat;
+      background-size: cover;
+    }
+}
 
 	#header {
 		position: relative;
@@ -2327,6 +2387,7 @@ input, select, textarea {
 		overflow: hidden;
 	}
 
+
 		#nav > ul {
 			/* line-height: 0px;
 			position: relative;
@@ -2403,6 +2464,7 @@ input, select, textarea {
 		min-width: 12em;
 		margin-top: -1em;
 		list-style: none;
+		display:block;
 	}
 
 		.dropotron li {
@@ -2525,6 +2587,8 @@ input, select, textarea {
 			#footer .contact p {
 				text-align: center;
 				margin: 0 0 3em 0;
+				color: white;
+				background-color:inherit;
 			}
 
 		#footer .copyright {
@@ -2684,7 +2748,10 @@ input, select, textarea {
 					width: 18em;
 					margin: 0 1.25em 0 0;
 				}
-
+				.carousel.wide article {
+					width: 22em;
+					margin: 0 1.25em 0 0;
+				}
 	}
 
 /* Normal */
