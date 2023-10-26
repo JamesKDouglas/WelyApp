@@ -1,0 +1,117 @@
+<%- include('partials/header2') -%>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-error-bars@3.10.0/build/index.umd.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@1.2.1/dist/chartjs-plugin-zoom.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>-->
+<div class="container">
+  <div class="container">
+    <div id ="divChart">
+      <canvas id="Chart" width = "400" height="400"></canvas>
+    </div>
+  </div>
+  <div class="row mt-5">
+      <div class="col-6">
+          <div class="mt-5">
+            <div class = "card">
+              <h2 class = "card-title m-3">Add an Observation</h2>
+              <div class="card-body">
+                <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+                  <div class="mb-3">
+                      <label for="title" class="form-label">Title</label>
+                      <input type="text" class="form-control" id="title" name="title">
+                  </div>
+                  <div class="mb-3">
+                    <label for="caption" class="form-label">Caption</label>
+                    <textarea class="form-control" id="caption" name="caption"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="imgUpload" class="form-label">Image</label>
+                    <input type="file" class="form-control" id="imageUpload" name="file">
+                  </div>
+                  <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-5">
+            <div class = "card">
+              <h2 class = "card-title m-3">Set Chart Parameters</h2>
+              
+              <div class = "card-body">
+                <form action="/chart/putChart" method="POST">
+                  
+                  <input type="radio" id="mass" name="field" value="mass">
+                  <label for="mass">mass</label><br>
+                  <input type="radio" id="temperature" name="field" value="temperature">
+                  <label for="temperature">temperature</label><br>
+                
+                  <div class="mb-3">
+                    <label for="channelid" class="form-label">ChannelID</label>
+                    <input type="text" class="form-control" id="channelid" name="channelid">
+                  </div>
+                  <div class="mb-3">
+                    <label for="writeapi" class="form-label">WriteAPI</label>
+                    <input type="text" class="form-control" id="writeapi" name="writeapi">
+                  </div>
+                  <div class="mb-3">
+                    <label for="numpoints" class="form-label"># points to show (up to 8000)</label>
+                    <input type="text" class="form-control" id="numpoints" name="numpoints">
+                  </div>
+                  <div class="mb-3">
+                    <label for="startdate" class="form-label">Start Date (optional; defaults to # points ago from now)</label>
+                    <input type="text" class="form-control" id="startdate" name="startdate">
+                  </div>
+                  <div class="mb-3">
+                    <label for="enddate" class="form-label">End Date (optional; defaults to now)</label>
+                    <input type="text" class="form-control" id="enddate" name="enddate">
+                  </div>
+                  <!--
+                  <div class="mb-3">
+                    <label for="downsample" class="form-label">Downsample (1 for no downsampling, 2 to skip every second point etc.)</label>
+                    <input type="text" class="form-control" id="downsample" name="downsample">
+                  </div>
+                  -->
+                  <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-6">
+        <ul class="row list-unstyled">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/post/<%= posts[i]._id%>">
+              <img class="img-fluid" src="<%= posts[i].image%>">
+            </a>
+          </li>
+        <% } %>
+        </ul>
+        <div class="row justify-content-center mt-5">
+<<<<<<< HEAD
+          <a class="btn btn-primary" href="/feed">Full Screen Feed</a>
+=======
+          <a class="btn btn-primary" href="/feed">Feed Only</a>
+>>>>>>> splashPage
+        </div>  
+      </div>  
+    </div>
+  </div>
+
+  <div id = "script" chartInfo= "<%=JSON.stringify(chartInfo)%>" ></div>
+  <script type="text/javascript" src="js/chart.js"></script>
+
+
+
+</div>
+<%- include('partials/footer') -%>

@@ -3,3 +3,5 @@
 config/.env
 node_modules/
 utility/
+.DS_Store
+public/.DS_Store
