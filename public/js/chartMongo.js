@@ -1,50 +1,96 @@
 // import { BarWithErrorBarsController, BarWithErrorBar } from 'chartjs-chart-error-bars';
 // const {BarWithErrorBarsController} = require('chartjs-chart-error-bars');
-let chartInfo = document.getElementById("script").getAttribute('chartInfo');
-chartInfo = JSON.parse(chartInfo);
-console.log("chartInfo:", chartInfo);
 
-// let channelId = chartInfo[0].channelid;//Wely 8
-// let api = chartInfo[0].writeapi;
-// let numpoints = chartInfo[0].numpoints;
-// let field = chartInfo[0].field;
+const { MongoClient } = require('mongodb');
 
-let someData = getData(channelId, api, numpoints, field);
+// Connection URL
+const url = 'https://us-west-2.aws.data.mongodb-api.com/app/data-akvsn/endpoint/data/v1/';//action/findOne cut off. Should it be?
+const client = new MongoClient(url);
 
-someData.then(response => {
-  console.log('returned object', response);
-  makeChart(response.feeds, response.channel.name);
-});
+// Database Name
+const dbName = 'Cluster0';
 
-async function getData(channelId, api, numpoints, field){
-  // api ref https://www.mathworks.com/help/thingspeak/readdata.html
-  //default format
-  //default #results
-  //url: https://api.thingspeak.com/channels/<channel_id>/feeds.<format>
-  //append query string params:api_key, # results
-  // ex https://api.thingspeak.com/channels/9/feeds.json?results=3
-  let format = "json";
-  let numResults = numpoints;
-  let dataURL = "https://api.thingspeak.com/channels/" + channelId + "/feeds." + format + "?results=" + numResults + "?api_key=" + api;
-  console.log(dataURL);
-  console.log("field:", field);
-  if (field === "mass"){
-    console.log("mass selected!");
-    localStorage.setItem("field", "field1");
-  } else if (field === "temperature"){
-    console.log("temperature selected!");
-    localStorage.setItem("field", "field3")
-  }
-  try{
-    const res = await fetch(dataURL)
-    const data = await res.json();
-    return data;
-  }
-  catch{
-    throw new Error("uh Oh!")
-  } 
-  
+async function main() {
+  // Use connect method to connect to the server
+  await client.connect();
+  console.log('Connected successfully to server');
+  const db = client.db(dbName);
+  const collection = db.collection('documents');
+
+  // the following code examples can be pasted here...
+
+  return 'done.';
 }
+
+main()
+  .then(console.log)
+  .catch(console.error)
+  .finally(() => client.close());
+
+// let chartInfo = document.getElementById("script").getAttribute('chartInfo');
+// chartInfo = JSON.parse(chartInfo);
+// console.log("chartInfo:", chartInfo);
+
+// // let channelId = chartInfo[0].channelid;//Wely 8
+// // let api = chartInfo[0].writeapi;
+// // let numpoints = chartInfo[0].numpoints;
+// // let field = chartInfo[0].field;
+
+
+// // curl --location --request POST 'https://us-west-2.aws.data.mongodb-api.com/app/data-akvsn/endpoint/data/v1/action/findOne' \
+// // --header 'Content-Type: application/json' \
+// // --header 'Access-Control-Request-Headers: *' \
+// // --header 'api-key: 9wf7d5Oo831YzFuO0d3YPHUKkJhPeMXhmuhPMM02IxKH8Ius77VGoskVjfQXWNIO' \
+// // --data-raw '{
+// //     "collection":"TimeSeries.Gray1",
+// //     "database":"Cluster0",
+// //     "dataSource":"Cluster0",
+// //     "projection": {"_id": 1}
+// // }'
+
+// let someData = getDataMongo(key, numpoints, fields);
+
+// someData.then(response => {
+//   console.log('returned object', response);
+//   makeChart(response.feeds, response.channel.name);
+// });
+
+// async function getDataMongo(key, numpoints, fields){
+//   // api ref https://www.mathworks.com/help/thingspeak/readdata.html
+//   //default format
+//   //default #results
+//   //url: https://api.thingspeak.com/channels/<channel_id>/feeds.<format>
+//   //append query string params:api_key, # results
+//   // ex https://api.thingspeak.com/channels/9/feeds.json?results=3
+//   let format = "json";
+//   let numResults = numpoints;
+//   // let dataURL = "https://api.thingspeak.com/channels/" + channelId + "/feeds." + format + "?results=" + numResults + "?api_key=" + api;
+//  let dataURL = "https://us-west-2.aws.data.mongodb-api.com/app/data-akvsn/endpoint/data/v1/action/findOne";
+  
+//   console.log(dataURL);
+//   console.log("field:", fields);
+
+//   //in thingspeak we request fields. In Mongodb you request documents
+//   //so all fields will be provided.
+//   // if (fields.find(el => el==="mass")){
+//   //   console.log("mass data requested!");
+//   //   localStorage.setItem("field", "field1");//?
+//   // } else if (field === "temperature"){
+//   //   console.log("temperature selected!");
+//   //   localStorage.setItem("field", "field3")
+//   // }
+
+//   //The mongodb api isn't this simple. 
+//   // try{
+//   //   const res = await fetch(dataURL)
+//   //   const data = await res.json();
+//   //   return data;
+//   // }
+//   // catch{
+//   //   throw new Error("uh Oh!")
+//   // } 
+  
+// }
 
 function makeChart(data, name){
 

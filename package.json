@@ -1,7 +1,7 @@
 {
-  "name": "binary-upload-boom",
+  "name": "wely-app",
   "version": "1.0.0",
-  "description": "100Devs Social Network",
+  "description": "app for the Wely Device",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
