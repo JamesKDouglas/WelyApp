@@ -146,15 +146,6 @@ async function getData(bearerKey){
         console.log("massInternalCal:", massInternalCal);
         console.log("timeStamp:", timeStamp);
 
-        //data array has to follow the form data = [{x:"timestamp", y:"value"}]
-        let point;
-        let data = [];
-        for (let i=0;i<temperature.length; i++){
-          point = {'x':`${timeStamp[i]}`, 'y': `${massADC[i]}`};
-          data.push(point);
-        }
-
-
         //linear regression:
         //import library via CDN
 
@@ -182,7 +173,19 @@ async function getData(bearerKey){
         console.log("rest of the linear regression:", resultReg);  
         
         
-        makeChart(data, "My awesome chart");
+        let massADCCal = [];
+        for (let i=0;i<temperature.length;i++){
+          massADCCal.push(massADC[i] - gradient*temperature[i] - yIntercept);
+        }
+        //data array has to follow the form data = [{x:"timestamp", y:"value"}]
+        let point;
+        let dataWithCal = [];
+        for (let i=0;i<temperature.length; i++){
+          point = {'x':`${timeStamp[i]}`, 'y': `${massADCCal[i]}`};
+          dataWithCal.push(point);
+        }
+
+        makeChart(dataWithCal, "My awesome chart");
       })
       .catch(error => console.log('error', error));
 }
