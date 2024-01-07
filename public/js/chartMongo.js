@@ -120,7 +120,7 @@ async function getData(bearerKey){
       "database":"Cluster0",
       "dataSource":"Cluster0",
       "sort": {"time": -1},
-      "limit": 100
+      "limit": 1000
   });
 
   var requestOptions = {
@@ -153,6 +153,35 @@ async function getData(bearerKey){
           point = {'x':`${timeStamp[i]}`, 'y': `${massADC[i]}`};
           data.push(point);
         }
+
+
+        //linear regression:
+        //import library via CDN
+
+        //I do have to figure out units to get meaningful regression.
+        //some sort of g/deg C
+        //or ADCReadings/deg C
+
+        //right now the time stamp is just a series of values and each index in the array is the data point id.
+
+        //convert to s epoch time units. 
+        //
+        let dataForReg = [];
+        // console.log(Date.parse(timeStamp[0]))
+        // timeStamp = timeStamp.map(el=> Date.parse(el)/1000);
+
+        for (let i=0;i<temperature.length;i++){
+          dataForReg.push([temperature[i], massADC[i]])
+        }
+        console.log(dataForReg);
+        const resultReg = regression.linear(dataForReg);
+        const gradient = resultReg.equation[0];
+        const yIntercept = resultReg.equation[1];
+
+        console.log("linear regression:", "yInt:", yIntercept, "slope:", gradient);
+        console.log("rest of the linear regression:", resultReg);  
+        
+        
         makeChart(data, "My awesome chart");
       })
       .catch(error => console.log('error', error));
