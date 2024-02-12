@@ -1,4 +1,15 @@
+var slider = document.getElementById('slider');
 
+noUiSlider.create(slider, {
+    start: [20, 80],
+    connect: true,
+    range: {
+        'min': 0,
+        'max': 100
+    }
+});
+
+// Get the bearer key using an API key.
 fetch('https://realm.mongodb.com/api/client/v2.0/app/data-akvsn/auth/providers/api-key/login', {
   method: 'POST',
   headers: {
@@ -11,11 +22,22 @@ fetch('https://realm.mongodb.com/api/client/v2.0/app/data-akvsn/auth/providers/a
 .then(result => {
   console.log(result);
   let bearerKey = JSON.parse(result).access_token;
-  getData(bearerKey);
+  // I should load these values from some kind of double slider.
+  let start = new Date('2024-02-07');
+  let stop = new Date('2024-02-12');
+  getData(bearerKey, start, stop);
 })
 .catch(error => console.log('error', error));
 
-async function getData(bearerKey){
+async function getData(bearerKey, start, stop = new Date(Date.now())){
+  
+  // set a default start time if none is specified
+  if (!start){
+    start = new Date()
+    start.setDate(stop.getDate() - 7)
+  }
+  
+
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
@@ -27,6 +49,12 @@ async function getData(bearerKey){
       "database":"Cluster0",
       "dataSource":"Cluster0",
       "sort": {"time": -1},
+      "filter": {
+        "time": {
+          "$gte": { "$date": start },
+          "$lt": { "$date": stop }
+        }
+      },
       "limit": 1000
   });
 
