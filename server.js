@@ -7,16 +7,16 @@ const MongoStore = require("connect-mongo")(session);
 const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");
-const connectDB = require("../config/database");
-const mainRoutes = require("../routes/main");
-const postRoutes = require("../routes/posts");
-const chartRoutes = require("../routes/chart");
+const connectDB = require("./config/database");
+const mainRoutes = require("./routes/main");
+const postRoutes = require("./routes/posts");
+const chartRoutes = require("./routes/chart");
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 
 // Passport config
-require("../config/passport")(passport);
+require("./config/passport")(passport);
 
 //Connect To Database
 connectDB();
@@ -25,8 +25,8 @@ connectDB();
 app.set("view engine", "ejs");
 
 //Static Folder
-// Vercel doesn't use this
-// app.use(express.static("public"));
+
+app.use(express.static("public"));
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));
@@ -61,9 +61,7 @@ app.use("/post", postRoutes);
 app.use("/chart", chartRoutes);
 
 //Server Running
-// Vercel uses a serverless function instead.
-// app.listen(process.env.PORT, () => {
-//   console.log("Server is running, you better catch it!");
-// });
 
-module.exports = app;
+app.listen(process.env.PORT, () => {
+  console.log("Server is running, you better catch it!");
+});
