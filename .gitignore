@@ -6,3 +6,4 @@ utility/
 .DS_Store
 public/.DS_Store
 MongoDBPractice/
+.vercel

@@ -25,7 +25,8 @@ connectDB();
 app.set("view engine", "ejs");
 
 //Static Folder
-app.use(express.static("public"));
+// Vercel doesn't use this
+// app.use(express.static("public"));
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));
@@ -60,8 +61,9 @@ app.use("/post", postRoutes);
 app.use("/chart", chartRoutes);
 
 //Server Running
-app.listen(process.env.PORT, () => {
-  console.log("Server is running, you better catch it!");
-});
+// Vercel uses a serverless function instead.
+// app.listen(process.env.PORT, () => {
+//   console.log("Server is running, you better catch it!");
+// });
 
 module.exports = app;
