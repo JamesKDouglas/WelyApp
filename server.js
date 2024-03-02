@@ -16,14 +16,16 @@ const helmet = require("helmet");
 const RateLimit = require("express-rate-limit");
 const limiter = RateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
-  max: 20,
+  max: 150,
 });
 app.use(limiter);
 
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      "script-src": ["'self'", "code.jquery.com", "cdn.jsdelivr.net"],
+      "script-src": ["'self'", "cdnjs.cloudflare.com", "cdn.jsdelivr.net"],
+      "img-src":[ "'self'", "data:", "http://res.cloudinary.com"], 
+      "connect-src":["https://api.thingspeak.com/"],
     },
   }),
 );
