@@ -1,7 +1,10 @@
 {
-  "name": "binary-upload-boom",
+  "name": "wely-app",
   "version": "1.0.0",
-  "description": "100Devs Social Network",
+  "engines": {
+    "node": ">20.9.0"
+  },
+  "description": "Wely App",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
@@ -19,7 +22,9 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-flash": "^0.0.2",
+    "express-rate-limit": "^7.1.5",
     "express-session": "^1.17.1",
+    "helmet": "^7.1.0",
     "method-override": "^3.0.0",
     "mongodb": "^3.6.5",
     "mongoose": "^5.12.3",
