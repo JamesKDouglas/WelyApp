@@ -2,7 +2,7 @@
   "name": "wely-app",
   "version": "1.0.0",
   "engines": {
-    "node": ">20.9.0"
+    "node": ">=20.9.0"
   },
   "description": "Wely App",
   "main": "server.js",
