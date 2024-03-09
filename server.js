@@ -31,7 +31,9 @@ app.use(
 );
 
 //Use .env file in config folder
-require("dotenv").config({ path: "./config/.env" });
+//THIS DOES NOT WORK IN GOOGLE RUN! It works fine in a docker container locally but not with google's gcloud build run command.
+// For google run I had to copy and paste the environment variables in through the gui 1/2 at a time and it was as horrible as it sounds. 
+require("dotenv").config({ path: __dirname+"./config/.env" });
 
 // Passport config
 require("./config/passport")(passport);
@@ -78,6 +80,13 @@ app.use("/post", postRoutes);
 app.use("/chart", chartRoutes);
 
 //Server Running
+
 app.listen(process.env.PORT, () => {
+  console.log("DB_STRING", process.env.DB_STRING);
+  console.log("PORT", process.env.PORT);
+  console.log("CLOUDINARY", process.env.CLOUD_NAME);
+  console.log("KEY", process.env.API_KEY);
+  console.log("SEC", process.env.API_SECRET);
+  console.log("Node env", process.env.NODE_ENV);
   console.log("Server is running, you better catch it!");
 });

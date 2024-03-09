@@ -29,3 +29,11 @@ Major components that the app uses are: Node.js for the back end, Express.js to 
 # Run
 
 `npm start`
+
+# Deployment
+
+This is currently deployed as a Docker container using Google Run. You can see a file at the top level called Dockerfile which is important for deployment. 
+
+The way I like to deploy it is to go into Google Shell, clone this repo into the shell, and use Cloud Build to deploy it into a container/service. 
+
+After that I add the environment variables through the Cloud Run GUI, which does take a bit of copy/pasting. Simply including the .env in the right spot before building does not work, likely because the container overrides the environment variables.
